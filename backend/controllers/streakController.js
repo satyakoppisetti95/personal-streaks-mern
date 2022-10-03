@@ -64,7 +64,7 @@ exports.deleteStreak = asyncHandler(async (req, res) => {
     try {
         let user = req.user;
         const streak = await streakModel.findOneAndDelete({ userId: user._id, _id: req.params.id });
-        res.status(200).json({ message: "Streak deleted" });
+        res.status(200).json(streak);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }

@@ -39,10 +39,22 @@ const deleteStreak = async (streakId, token) => {
     return response.data
 }
 
+const incrementStreak = async (streakId, token) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+
+    const response = await axios.put(API_URL + streakId + '/count', {}, config)
+    return response.data
+}
+
 const streakService = {
     createStreak,
     getStreaks,
     deleteStreak,
+    incrementStreak,
 }
 
 export default streakService
