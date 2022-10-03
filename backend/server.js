@@ -3,6 +3,7 @@ const dotenv = require('dotenv').config();
 const colors = require('colors');
 const port = process.env.PORT || 3000;
 const connectDB = require('./config/db');
+const path = require('path');
 
 connectDB();
 
